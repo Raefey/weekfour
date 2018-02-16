@@ -20,8 +20,10 @@ end
 
 
 def print(students)
-  students.each_with_index do |student, index|
-    puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
+  by_name =[]
+  students.each do |student|
+    by_name << "#{student[:name]} (#{student[:cohort]} cohort)"
+    puts by_name.select { |word| word.start_with?('b') }
   end
 end
 
