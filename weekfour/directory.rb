@@ -20,15 +20,15 @@ end
 
 
 def print(students)
-  by_name =[]
-  students.each do |student|
-    by_name << "#{student[:name]} (#{student[:cohort]} cohort)"
-    puts by_name.select { |word| word.start_with?('b') }
-  end
+  current_element = 0
+  while current_element < students.length do
+    puts students[current_element]
+    current_element += 1
+    end
 end
 
 def print_footer(students)
-  puts "Overall we have #{students.count} greats students"
+  puts "Overall we have #{students.count} great students"
 end
 
 def input_students
@@ -37,7 +37,7 @@ def input_students
   students = []
   name = gets.chomp
   while !name.empty? do
-    students << {name: name, cohort: :november}
+    students << name
     puts "Now we have #{students.count} students"
     name = gets.chomp
   end
